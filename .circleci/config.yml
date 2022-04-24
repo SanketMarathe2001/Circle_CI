@@ -4,20 +4,20 @@ version: 2.1
 jobs:
   build:
     docker:
-     - image: python
+      - image: python
     steps:
-     - checkout
-     - run: python Main1.py
+      - checkout
+      - run: python Main1.py
   test:
     docker:
-     - image: python
+      - image: python
 
     steps:
-     - checkout
-     - run: python Test.py
+      - checkout
+      - run: python Test.py
 # Orchestrate our job run sequence
 workflows:
- build and test:
-   jobs:
-    - build
-    - test
+  build_and_test:
+    jobs:
+      - build
+      - test
